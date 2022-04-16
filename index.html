@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a1f;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .stats-container {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container-player1-health {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            height: 30px;
+            width: 100%;
+        }
+
+        .container-player2-health {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            height: 30px;
+            width: 100%;
+        }
+
+        .player1-health-past {
+            background-color: #e40417;
+            border-radius: 5px 30px 10px 25px;
+            height: 30px;
+            width: 100%;
+            border: 2px #19191b solid;
+        }
+
+        .player2-health-past {
+            background-color: #e40417;
+            border-radius: 25px 10px 30px 5px;
+            height: 30px;
+            width: 100%;
+            border: 2px #19191b solid;
+        }
+
+
+        .player1-health {
+            position: absolute;
+            background: linear-gradient(90deg, #FFE660 0.04%, #EFAC00 100%);
+            border-radius: 5px 30px 10px 25px;
+            height: 30px;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .player2-health {
+            position: absolute;
+            background: linear-gradient(90deg,#EFAC00 0.04%, #FFE660 100%);
+            border-radius: 25px 10px 30px 5px;
+            height: 30px;
+            width: 100%;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .timer {
+            margin: 0 15px;
+            height: 100px;
+            width: 100px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .win-message {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stats-container">
+            <!-- Player1 health-->
+            <div class="container-player1-health">
+                <div class="player1-health-past"></div>
+                <div id="player1Health" class="player1-health"></div>
+            </div>
+            <!-- Timer -->
+            <div id="timer" class="timer"></div>
+            <!-- Player2 health-->
+            <div class="container-player2-health">
+                <div class="player2-health-past"></div>
+                <div id="player2Health" class="player2-health"></div>
+            </div>
+        </div>
+        <div id="winsMessage" class="win-message"></div>
+        <canvas></canvas>
+    </div>
+</body>
+<script src="./class/Sprite.js"></script>
+<script src="./class/Figther.js"></script>
+<script src="./utils/timerDecrese.js"></script>
+<script src="./utils/animate.js"></script>
+<script src="index.js"></script>
+</html>
