@@ -44,15 +44,15 @@ const player = new Fighter({
     },
     sprites: {
         idle: {
-            imageSrc: "./assets/samuraiMack/Idle.png",
+            imageSrc: "./assets/samuraiMack/kenjiIdle.png",
             framesMax: 8,
         },
         run: {
-            imageSrc: "./assets/samuraiMack/run.png",
+            imageSrc: "./assets/samuraiMack/Run.png",
             framesMax: 8,
         },
         jump: {
-            imageSrc: "./assets/samuraiMack/jump.png",
+            imageSrc: "./assets/samuraiMack/Jump.png",
             framesMax: 2,
         },
         fall: {
