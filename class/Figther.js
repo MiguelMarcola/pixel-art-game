@@ -96,7 +96,6 @@ class Fighter extends Sprite {
         if(this.timeCooldown > 0) {
             setTimeout(() => this.cooldown());
             this.timeCooldown--;
-            console.log(this.timeCooldown);
         }
     }
 
