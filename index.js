@@ -45,7 +45,7 @@ const player = new Fighter({
     sprites: {
         idle: {
             imageSrc: "./assets/samuraiMack/Idle.png",
-            framesMax: 8,
+            framesMax: 10,
         },
         run: {
             imageSrc: "./assets/samuraiMack/Run.png",
@@ -156,9 +156,9 @@ const keys = {
     },
 }
 
-function rectangularCollision({ player1,player2, }) {
+function rectangularCollision({ player1, player2, }) {
     return (
-        player1.attackBox.position.x + player1.attackBox.widht >= player2.position.x && 
+        player1.attackBox.position.x + player1.attackBox.widht >= player2.position.x &&
         player1.attackBox.position.x <= player2.position.x + player2.width &&
         player1.attackBox.position.y + player1.attackBox.height >= player2.position.y &&
         player1.attackBox.position.y <= player2.position.y + player2.height
@@ -167,7 +167,7 @@ function rectangularCollision({ player1,player2, }) {
 
 function determineWinner({ player, enemy }) {
     isAnimated = false;
-    if(player.health === enemy.health) {
+    if (player.health === enemy.health) {
         document.querySelector("#winsMessage").innerHTML = "Tie";
     } else if (player.health > enemy.health) {
         document.querySelector("#winsMessage").innerHTML = "Player 1 Wins";
@@ -183,7 +183,7 @@ decreaseTimer();
 animate();
 
 window.addEventListener("keydown", async (event) => {
-    if(!player.dead) {
+    if (!player.dead) {
         switch (event.key) {
             case "d":
                 keys.d.pressed = true;
@@ -197,15 +197,15 @@ window.addEventListener("keydown", async (event) => {
 
             case "w":
                 player.jump();
-                break; 
-            
+                break;
+
             case " ":
                 player.attack();
                 break;
         }
     }
 
-    if(!enemy.dead) {
+    if (!enemy.dead) {
         switch (event.key) {
             case "ArrowRight":
                 keys.ArrowRight.pressed = true;
@@ -215,11 +215,11 @@ window.addEventListener("keydown", async (event) => {
             case "ArrowLeft":
                 keys.ArrowLeft.pressed = true;
                 enemy.lastKey = "ArrowLeft";
-                break; 
+                break;
 
             case "ArrowUp":
                 enemy.jump();
-                break; 
+                break;
 
             case "ArrowDown":
                 enemy.attack();
@@ -233,7 +233,7 @@ window.addEventListener("keyup", (event) => {
         case "d":
             keys.d.pressed = false;
             break;
-        
+
         case "a":
             keys.a.pressed = false;
 
@@ -246,7 +246,7 @@ window.addEventListener("keyup", (event) => {
 
         case "ArrowLeft":
             keys.ArrowLeft.pressed = false;
-            break 
+            break
     }
 })
 
