@@ -45,7 +45,7 @@ const player = new Fighter({
     sprites: {
         idle: {
             imageSrc: "./assets/samuraiMack/Idle.png",
-            framesMax: 10,
+            framesMax: 8,
         },
         run: {
             imageSrc: "./assets/samuraiMack/Run.png",
